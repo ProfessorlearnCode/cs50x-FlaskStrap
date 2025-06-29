@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+/*REGISTRATION-SECTION COMPONENTS*/
+#reg-main-container{
+    position: relative;
+    background-image: url('Login/Login\ bg\ 2.webp');
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.login-button{
+    background-color: #e0623d; /* Coral */
+    border: none;
+    color: white;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: poppins;
+    font-size: 17px;
+    border-radius: 4px;
+    transition-duration: 0.3s;
+}
+.login-button:hover{
+    background-color: #62dbb7; /* Aquamarine */
+    border: none;
+    color: white;
+    
+    font-family: poppins;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 20px;
+}
+.register-button{
+    background-color: #e0623d; /* Coral */
+    border: none;
+    color: white;
+    font-family: poppins;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    border-radius: 3px;
+    transition-duration: 0.3s;
+}
+.register-button:hover{
+    background-color:  #62dbb7; /* Aquamarine */
+    border: none;
+    color: white;
+    font-family: poppins;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 20px;
+    box-shadow: 10px;
+}
+.h-button{
+    border: none;
+    font-family: poppins;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    border-radius: 3px;
+}
+.Gradient{
+    position: relative;
+    backdrop-filter: blur(3px);
+    background: rgb(90,63,48);
+    background: -moz-linear-gradient(301deg, rgba(90,63,48,0.7) 4%, rgba(53,167,90,0.7) 29%, rgba(44,119,68,0.7) 69%, rgba(170,58,56,0.7) 90%);
+    background: -webkit-linear-gradient(301deg, rgba(90,63,48,0.7) 4%, rgba(53,167,90,0.7) 29%, rgba(44,119,68,0.7) 69%, rgba(170,58,56,0.7) 90%);
+    background: linear-gradient(301deg, rgba(90,63,48,0.7) 4%, rgba(53,167,90,0.7) 29%, rgba(44,119,68,0.7) 69%, rgba(170,58,56,0.7) 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5a3f30",endColorstr="#aa3a38",GradientType=1);
+
+
+    
+    height: 100vh;
+}
+.content-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+}
+
+.headline{
+    font-family: Poppins;
+    text-align: left;
+    color: white;
+    width: 100%;
+    max-width: 35vw;
+
+}
+    .head{
+        font-size: 50px;
+        font-weight:700; 
+        font-family: Josefin Sans;
+        text-align: left;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 0;
+    }
+    .body{
+        font-size: 18px;
+        font-family: Poppins;
+        text-align: left;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 0;
+    }
+.reg-form-container{
+    width: 100%;
+    max-width: 40vw;
+    height: auto;
+    background-color: rgba(81, 214, 174, 0.2);
+    border: solid white;
+    border-radius: 12px;
+    font-family: Poppins;
+    font-size: 18px;
+    color:white;
+
+}
+.submit-button{
+    background-color: #e0623d; /* Coral */
+    border: none;
+    color: black;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: poppins;
+    font-size: 18px;
+    border-radius: 4px;
+    transition-duration: 0.3s;
+}
+.submit-button:hover{
+    background-color: #62dbb7; /* Aquamarine */
+    border: none;
+    color: white;
+    
+    font-family: poppins;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 18px;
+}
+
+#liveToast {
+    position: fixed; /* Fixed positioning */
+    bottom: 20px;    /* Distance from the bottom of the viewport */
+    right: 20px;     /* Distance from the right of the viewport */
+    z-index: 11;     /* Ensure it appears above other content */
+}

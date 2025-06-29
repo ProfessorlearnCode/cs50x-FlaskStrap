@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Panel</title>
+
+    
+    <!--Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- SocketIO CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-us.css') }}">
+
+</head>
+<body>
+    <div id="logout-main-container">
+        <div class="Gradient">
+
+            <!--NAVBAR-->
+            <nav class="navbar navbar-expand-lg border-bottom border-body">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url_for('content') }}"><img src="{{ url_for('static', filename='Webchatroom/The_Arch_logo_-_Frostbite-removebg-preview.png') }}" alt="logo" height="100"></a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto px-3">
+                        <button class="h-button mx-2" type="submit"><a href="{{ url_for('chatroom')}}" class="to-chat" style="text-decoration: none; color: black;">Chatroom</a></i></button>
+                        <button class="h-button mx-2" type="submit"><a href="{{ url_for('content') }}" class="to-conpage" style="text-decoration: none; color: black;"><i class="fa-solid fa-house"></i></a></button>
+                        <button class="logout-button mx-2" type="submit"><a href="{{ url_for('logout') }}" class="to-login" style="text-decoration: none; color: whitesmoke;">logout</a></button>
+                       
+                    </div>
+                </div>
+                </div>
+            </nav>
+
+            
+            <div class="content-container mt-3">
+                <div class="headline">
+                    <span class="head"><p>User Panel</p></span>
+                    <span class="body"><p>Manage your profile and settings</p></span>
+                </div>          
+            </div>
+            
+            <div class="user-panel-container">
+                <div class="user-info">
+                    <h3 class="user-name">{{ user["name"] }}</h3>
+                    <p class="user-email">{{ user["email"] }}</p>
+                    <h6 class="user-role">{{ user["role"] }}</h6>
+                </div>
+            
+                <div class="user-actions">
+                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#passModal">Change Password</button>
+                    <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete Account</button>
+                </div>
+            </div>
+            
+            <!-- Modal for Account Deletion Confirmation -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete your account?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger">Delete Account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal for Password Change Confirmation -->
+            <div class="modal fade" id="passModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Enter new password</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Old Password (for confirmation):</label>
+                          <input type="text" class="form-control" id="opass">
+                        </div>
+                        <div class="mb-3">
+                          <label for="message-text" class="col-form-label">New Password:</label>
+                          <input type="text" class="form-control" id="npass">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nevermind</button>
+                      <button type="button" class="btn btn-success">Change it</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+
+            
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <script>
+        document.querySelector('.btn-success').addEventListener('click', function() {
+            let oldPassword = document.getElementById('opass').value;
+            let newPassword = document.getElementById('npass').value;
+        
+            fetch('/change-password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `old_password=${oldPassword}&new_password=${newPassword}`,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.message);  // Show success message
+                    window.location.reload();
+                } else {
+                    alert(data.error);  // Show error message
+                }
+            });
+        });
+        </script>
+        
+        <script>
+            document.querySelector('.btn-danger').addEventListener('click', function() {
+                if (confirm("Are you sure you want to delete your account? This action is irreversible.")) {
+                    fetch('/delete-account', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert(data.message);  // Show success message
+                            window.location.href = '/';  // Redirect to homepage after account deletion
+                        } else {
+                            alert(data.error);  // Show error message
+                        }
+                    });
+                }
+            });
+            </script>
+            
+
+
+</body>
+</html>

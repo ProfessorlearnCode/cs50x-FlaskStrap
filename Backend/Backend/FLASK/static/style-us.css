@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+/*USER-SECTION COMPONENTS*/
+#logout-main-container{
+    position: relative;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.logout-button{
+    background-color: #808080; /* Gray */
+    border: none;
+    color: white;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: poppins;
+    font-size: 17px;
+    border-radius: 4px;
+    transition-duration: 0.3s;
+}
+.logout-button:hover{
+    background-color: #46b896; /* medium-Aquamarine */
+    border: none;
+    color: white;
+    
+    font-family: poppins;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+.h-button{
+    border: none;
+    font-family: poppins;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    border-radius: 3px;
+    text-shadow: 10px;
+}
+
+.Gradient{
+    position: relative;
+    background: rgb(128,128,128);
+    background: -moz-linear-gradient(135deg, rgba(128,128,128,0.7) 0%, rgba(44,62,80,0.7) 31%, rgba(76,161,160,0.7) 78%, rgba(63,173,160,0.7) 100%);
+    background: -webkit-linear-gradient(135deg, rgba(128,128,128,0.7) 0%, rgba(44,62,80,0.7) 31%, rgba(76,161,160,0.7) 78%, rgba(63,173,160,0.7) 100%);
+    background: linear-gradient(135deg, rgba(128,128,128,0.7) 0%, rgba(44,62,80,0.7) 31%, rgba(76,161,160,0.7) 78%, rgba(63,173,160,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#808080",endColorstr="#3fada0",GradientType=1);
+    height: 100vh;
+}
+.content-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* User Panel Section */
+.user-panel-container {
+    background-color: rgba(76, 161, 160, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 40vw;
+    margin: 20px auto;
+    color: white;
+    font-family: Poppins;
+    text-align: center;
+    border: solid white;
+}
+
+/* User Profile Info */
+.user-info {
+    margin-bottom: 20px;
+}
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-bottom: 10px;
+}
+.user-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+.user-email {
+    font-size: 18px;
+    color: #f1f1f1;
+}
+
+/* User Actions */
+.user-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.user-action-btn {
+    background-color: #46b896;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.user-action-btn:hover {
+    background-color: #34a085;
+    cursor: pointer;
+}
+
+/* Rest of the existing chat room styles */
+.content-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.headline {
+    font-family: Poppins;
+    text-align: center;
+    color: white;
+    width: 100%;
+    max-width: 35vw;
+    margin: 0;
+    padding: 0;
+}
+.head {
+    font-size: 50px;
+    font-weight: 700; 
+    font-family: 'Josefin Sans';
+}
+.body {
+    font-size: 18px;
+    font-family: Poppins;
+}
+

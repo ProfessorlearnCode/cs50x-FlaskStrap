@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Homepage</title>
+
+        <!--Bootstrap CDN-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        
+        <!--Font Awesome CDN-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='style-h.css') }}">
+    </head>
+
+    <body>
+        <!--HERO SECTION-->
+        <div id="hero-container">
+            <div class="Gradient">
+
+                <!--NAVBAR-->
+                <nav class="navbar navbar-expand-lg border-bottom border-body">
+                    <div class="container-fluid">
+                    <a class="navbar-brand" href="{{url_for('homepage')}}"><img src="{{ url_for('static', filename='Homepage/The Arch logo - Nebula.png') }}" alt="logo" height="100"></a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ms-auto px-3">
+                            <button class="login-button mx-2" type="submit"><a href="{{ url_for('login') }}" class="to-login" style="text-decoration: none; color: black;">login</a></button>
+                            <button class="register-button mx-2" type="submit"><a href="{{ url_for('register') }}" class="to-register" style="text-decoration: none; color: black;">register</a></button>
+                        </div>
+                    </div>
+                    </div>
+                </nav>
+        
+                <!--HEADLINE CONTENT-->
+                <div class="headline">
+                    <span class="head"><p>Create | Connect | Communicate</p></span>
+                    <span class="body"><p>Showcase your work, share your ideas, and engage <br>
+                        in real-time conversations—all in one place.</p></span>
+                    <span class="CTA">
+                        <button class="CTA-button mx-2"><a href="{{ url_for('login') }}" class="to-login" style="text-decoration: none; color: black;">Get Started</a></button>
+                    </span>
+                </div>
+
+                <!--WAVE FOOTER-->
+                <div class="wave-hero-container">
+                    <img class="wave-hero" src="{{ url_for('static', filename='Homepage/Wave-cropped1.png') }}" alt="wave-hero">
+                </div>
+
+            </div>
+        </div>
+
+        <!--ABOUT SECTION-->
+        <div class="about-container">
+            <div class="pic-container">
+                <img class="about-img" src="{{ url_for('static', filename='Homepage/About Picture.png') }}" alt="about">
+            </div>
+            
+            <div class="content-container">
+                <p class="about-head">
+                    Have a brilliant idea?
+                </p>
+                <p class="about-subhead">
+                    Why don't share it with the community..
+                </p>
+                <p class="about-content1">
+                    Whether you're an aspiring writer, a seasoned
+                    professional, or just someone with a unique perspective,our platform gives you the tools to express yourself.
+                </p>
+                <p class="about-content2">
+                    Share articles, connect with like-minded individuals, and contribute to a community that values creativity and
+                    conversation.
+                </p>
+                <span class="about-btn">
+                    <button class="about-button"><a href="{{ url_for('login') }}" class="to-login" style="text-decoration: none; color: black;">Dive in</a></button>
+                </span>
+            </div>
+        </div>
+
+        <!--WHY US SECTION-->
+        <div class="whyus-container">
+            <div class="whyus-header">
+                <p class="whyus-headline">
+                    Why choose this?
+                </p>
+            </div>
+
+            <div class="whyus-body">
+                <div class="whyus-cards">
+                    <div class="container">
+                        <section class="mx-auto my-5" style="max-width: 23rem;"> 
+                        <div class="card">
+                            <div class="card-body">
+                            <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
+                                <div class="blockquote-custom-icon  shadow-1-strong">
+                                    <i class="fa-solid fa-user" style="font-size: 35px;"></i>
+                                </div>
+                                <header class="blockquote-header py-3 my-3 border-bottom" style="font-family: Josefin Sans; font-weight: bold; font-size: 22px;">
+                                    Friendly User Interface
+                                </header>
+                                <p class="mb-0 mt-2" style="font-family: Poppins; font-size: 17px;">
+                                "Our platform is designed with
+                                simplicity in mind, offering an
+                                intuitive experience for both
+                                creators and readers."
+                                </p>
+                            </blockquote>
+                            </div>
+                        </div>
+                        
+                        </section>
+                    </div>
+        
+                    <div class="container">
+                        <section class="mx-auto my-5" style="max-width: 23rem;"> 
+                        <div class="card">
+                            <div class="card-body">
+                            <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
+                                <div class="blockquote-custom-icon  shadow-1-strong">
+                                    <i class="fa-solid fa-comments" style="font-size: 35px;"></i>
+                                </div>
+                                <header class="blockquote-header py-3 my-3 border-bottom" style="font-family: Josefin Sans; font-weight: bold; font-size: 22px;">
+                                    Real-time Communication
+                                </header>
+                                <p class="mb-0 mt-2" style="font-family: Poppins; font-size: 17px;">
+                                "Stay connected with our live chatroom, where users can share ideas and engage in meaningful discussions in real time."
+                                </p>
+                            </blockquote>
+                            </div>
+                        </div>
+                        
+                        </section>
+                    </div>
+                    
+                    <div class="container">
+                        <section class="mx-auto my-5" style="max-width: 23rem;"> 
+                        <div class="card">
+                            <div class="card-body">
+                            <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
+                                <div class="blockquote-custom-icon  shadow-1-strong">
+                                    <i class="fa-solid fa-folder-tree" style="font-size: 35px;"></i>
+                                </div>
+                                <header class="blockquote-header py-3 my-3 border-bottom" style="font-family: Josefin Sans; font-weight: bold; font-size: 22px;">
+                                    Content management
+                                </header>
+                                <p class="mb-0 mt-2" style="font-family: Poppins; font-size: 17px;">
+                                "Creators enjoy a
+                                smooth content management
+                                experience, while viewers have easy access to a wide range of articles."
+                                </p>
+                            </blockquote>
+                            </div>
+                        </div>
+                        
+                        </section>
+                    </div>
+                </div>
+
+                <!--WAVE FOOTER-->
+                <div class="whyus-wave-hero-container">
+                    <img class="whyus-wave-hero" src="{{ url_for('static', filename='Homepage/Wave-cropped1.png') }}" alt="wave-hero">
+                </div>
+            </div>
+            
+        </div>
+
+        <!--PROCESS SECTION-->
+        <div class="process-container">
+            <div class="process-header">
+                <p class="process-headline">
+                    What was my thinking process?
+                </p>
+            </div>
+
+            <div class="process-body">
+                <div class="initial-v">
+                    <div class="ini-content-container">
+                        <p class="ini-head">
+                            Initial Vision
+                        </p>
+                        <p class="ini-content1">
+                            The idea was born from a simple concept —creating a community-driven platform where users can share, discuss, and grow their ideas.
+                        </p>
+                        <p class="ini-content2">
+                            We wanted to empower individuals to express themselves and connect with others in meaningful ways.
+                        </p>
+                    </div>
+                    
+                    <div class="ini-pic-container">
+                        <img class="ini-img" src="{{ url_for('static', filename='Homepage/Vision.png') }}" alt="initial-vision.png">
+                    </div>
+                </div>
+
+                <div class="proc">
+                    <div class="proc-pic-container">
+                        <img class="proc-img" src="{{ url_for('static', filename='Homepage/The Process.png') }}" alt="The process.png">
+                    </div>
+
+                    <div class="proc-content-container">
+                        <p class="proc-head">
+                            The Procedure
+                        </p>
+                        <p class="proc-content1">
+                            Starting from scratch, we meticulously planned each aspect of the project.
+                        </p>
+                        <p class="proc-content2">
+                            The goal was to combine user-friendly
+                            design with robust functionality, ensuring a seamless experience for all users.
+                        </p>
+                    </div>            
+                </div>
+
+                <!--WAVE FOOTER-->
+                <div class="proc-wave-hero-container">
+                    <img class="proc-wave-hero" src="{{ url_for('static', filename='Homepage/Wave-cropped1.png') }}" alt="wave-hero">
+                </div>
+            </div>
+
+        </div>
+
+        <!--BUILD SECTION-->
+        <div class="build-container">
+            <div class="build-header">
+                <p class="build-headline">
+                    How did I built this?
+                </p>
+            </div>
+
+            <div class="build-body">
+                <div class="frnt">
+                    <div class="frnt-content-container">
+                        <p class="frnt-head">
+                            Front End
+                        </p>
+                        <p class="frnt-content">
+                            The user interface was crafted using HTML, CSS,Bootstrap, and Bulma, ensuring a responsive
+                            and visually appealing design.
+                        </p>
+                        <span class="frnt-symbols">
+                            <i class="fa-brands fa-html5"></i>
+                            <i class="fa-brands fa-css3-alt"></i>
+                            <i class="fa-brands fa-js"></i>
+                            <i class="fa-brands fa-bootstrap"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="frnt-pic-container">
+                        <img class="frnt-img" src="{{ url_for('static', filename='Homepage/Front end.png') }}" alt="Front End.png">
+                    </div>
+                </div>
+
+                <div class="back">
+                    <div class="back-pic-container">
+                        <img class="back-img" src="{{ url_for('static', filename='Homepage/Back End.png') }}" alt="Backend.png">
+                    </div>
+
+                    <div class="back-content-container">
+                        <p class="back-head">
+                            Back End
+                        </p>
+                        <p class="back-content">
+                            The backend was powered by Flask (Python) to handle
+                        user authentication, content management, and realtime interactions. Moreover, we utilized SQLite3 for
+                        efficient and secure data storage.<br>
+                        To manage content easily, Strapi was integrated,
+                        allowing seamless content creation and management
+                        </p>
+                        <span class="back-symbols">
+                            <img class="flask" src="{{url_for('static', filename = 'Homepage/icons8-flask.svg') }}" alt="flask logo.svg">
+                            <img class="sqlite" src="{{url_for('static', filename = 'Homepage/icons8-sqlite.svg') }}" alt="sqlite logo.svg">
+                            <img class="strapi" src="{{url_for('static', filename = 'Homepage/strapi.png') }}" alt="Strapi logo.svg">
+                        </span>
+                    </div>
+                    
+
+            
+            
+                </div>
+
+                <!--WAVE FOOTER-->
+                <div class="proc-wave-hero-container">
+                    <img class="proc-wave-hero" src="{{ url_for('static', filename='Homepage/Wave-cropped1.png') }}" alt="wave-hero">
+                </div>
+            </div>
+
+        </div>
+
+        <!--CREATOR SECTION-->
+        <div class="ctr-container">
+            <div class="ctr-pic-container">
+                <img class="ctr-img" src="{{ url_for('static', filename='Homepage/Farzam Photo cropped.jpg') }}" alt="about">
+            </div>
+            
+            <div class="ctr-content-container">
+                <p class="ctr-head">
+                    Who made this?
+                </p>
+                <p class="ctr-subhead">
+                    Hi There! I am Farzam Asad
+                </p>
+                <p class="ctr-content1">
+                    A computer science student at Lahore Garrison
+                    University who made this monstrosity,<br>
+                    I hold a deep passion for backend development
+                    and machine learning. This project reflects my
+                    skills and enthusiasm for creating meaningful
+                    tech solutions, with a developing side hobby of
+                    learning Japanese!
+                </p>
+                <span class="ctr-symbols">
+                    <a href="https://github.com/ProfessorlearnCode" style="text-decoration: none; color: black;">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/profronin/" style="text-decoration: none; color: black;">
+                        <i class="fa-brands fa-square-instagram"></i>
+                    </a>
+
+                    <a href="https://x.com/Professor_use_x" style="text-decoration: none; color: black;">
+                        <i class="fa-brands fa-square-x-twitter"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
+        
+        <!--PROJECT SHOWCASE SECTION-->
+        <div class="proj-container">    
+            <div class="proj-content-container">
+                <p class="proj-head">
+                    Let's wrap up?
+                </p>
+                <p class="proj-subhead">
+                    Here are some other concepts which I worked on
+                </p>
+
+                <div id="Accordion"> 
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Social Media Database System
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>Dive into the 🌐 world of database management with this Python-based program! From connecting to servers to executing SQL queries, it's got all the tools you need. Plus, peek into a social media database schema and explore fun sample queries. Let's make data management as enjoyable as 🍰</p>
+                            <a href="https://github.com/ProfessorlearnCode/Social-Media-Database-System">Click here to view source code 👋</a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Static & Dynamic Webscraper
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body" >
+                            <p>A versatile web scraper with two components: one for extracting data from static HTML pages and another for handling dynamic content rendered by JavaScript. 💻</p>
+                            <a href="https://github.com/ProfessorlearnCode/Web-Scraper">Click here to view source code 👋</a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        ChatBot
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body" >
+                            <p>Dive into interactive conversations with our sleek Chatbot GUI 🌐. Built with Python and Tkinter, this easy-to-use chatbot offers dynamic responses and a user-friendly interface. Whether you're greeting it or asking about its creators, enjoy a seamless and engaging chat experience right from your desktop! 🤖</p>
+                            <a href="https://github.com/ProfessorlearnCode/Simple_Chatbot">Click here to view source code 👋</a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        Simple Linear Regression Model
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                This code implements a linear regression model to predict diabetes progression based on the diabetes dataset. The model is trained and evaluated, with results visualized through scatter and residual plots 📈.
+                            </p>
+                            <a href="https://github.com/ProfessorlearnCode/Linear-Regression-Model">Click here to view source code 👋</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                
+                <div id="to-top">
+                    <H1>
+                        <a href="#hero-container" style="text-decoration: none; font-size: 80px; color: black; margin-bottom: 0;">
+                            <i class="fa-solid fa-caret-up"></i>
+                        </a>
+                    </H1>
+                    <p style="font-family: Poppins; margin-bottom: 0;">Nothing more to see, click the arrow to go to the top</p>
+                </div> 
+            </div>
+        
+        
+        
+        </div>
+    
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+    </body>
+
+</html>

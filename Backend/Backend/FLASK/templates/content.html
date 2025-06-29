@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content</title>
+
+    
+    <!--Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-cs.css') }}">
+
+
+</head>
+<body>
+    <div id="logout-main-container">
+        <div class="Gradient">
+
+            <!--NAVBAR-->
+            <nav class="navbar navbar-expand-lg border-bottom border-body">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url_for('content') }}"><img src="{{ url_for('static', filename='Content/The Arch logo - Passion.png') }}" alt="logo" height="100"></a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto px-3">
+                        <button class="h-button mx-2" type="submit"><a href="{{ url_for('dashboard')}}" class="to-dash" style="text-decoration: none; color: black;">Dashboard</a></i></button>
+                        <button class="h-button mx-2" type="submit"><a href="{{ url_for('chatroom')}}" class="to-chat" style="text-decoration: none; color: black;">Chatroom</a></i></button>
+                        <button class="logout-button mx-2" type="submit"><a href="{{ url_for('logout') }}" class="to-login" style="text-decoration: none; color: whitesmoke;">logout</a></button>
+                    </div>
+                </div>
+                </div>
+            </nav>
+
+            <!--HEADING-->
+            <div class="content-container">
+                <div class="headline">
+                    <span class="head"><p>Content Hub</p></span>
+                    <span class="body"><p>Share your creativity, explore new ideas, and engage
+                        with the community</p></span>
+                </div>          
+            </div>
+
+
+            <div class="container">
+                {% for article in content_dictionary['articles'] %}
+                    <div class="card text-bg-dark text-center w-100 mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article["content"]["headline"] }}</h5>
+                            <p class="card-text">{{ article["content"]["body"][:100] }}...</p>
+                            <a href="{{ url_for('article_detail', article_id=article['ID']) }}" class="btn btn-outline-secondary">Read more</a>
+                            <h6 class="card-title mt-3">{{ article["author"] }}</h6>
+                            <p class="card-text mt-1" style="font-size: small;">{{ article["published"].strftime('%B %d, %Y') }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            
+            
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
