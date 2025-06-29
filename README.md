@@ -163,9 +163,4 @@ flask run
 
 ---
 
-> *Feel free to fork, explore, and learn! Contributions and suggestions are welcome.*
-
-```
-
-Happy Exploring 🚀
-```
+> 📌 *Feel free to explore, modify, and enhance this project for your own needs!*
